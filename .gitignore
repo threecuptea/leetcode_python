@@ -3,6 +3,7 @@
 /dist/
 *.log
 *.tmp
+*.iml
 
 # Dependency management
 /node_modules/
