@@ -2,7 +2,11 @@ from typing import List
 from collections import defaultdict
 
 class Solution:
+    # row_idx, col_idx, box_idx are all keyed by the Sudoku number.
+    # Values are all row indexes, and column indexes for col_idx etc.
+    # I can check if there is existing row index 0 for Sudoku number 3, ex.
     def isValidSudoku(self, board: List[List[str]]) -> bool:
+        # The formula to get box number.
         def get_box_num(r, c):
             return (r // 3) * 3 + c // 3 # r
 
@@ -12,6 +16,8 @@ class Solution:
                 val = board[row][col]
                 if val.isdigit():
                     box = get_box_num(row, col)
+                    # check if there is existing row index 0 for Sudoku number 3, ex.
+                    # Apply the same on col_idx and box_idx
                     if row_idx.get(val) and row in row_idx.get(val):
                         return False
                     if col_idx.get(val) and col in col_idx.get(val):
