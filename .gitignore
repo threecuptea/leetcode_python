@@ -17,6 +17,7 @@ Thumbs.db
 .venv/
 .vscode/
 *.swp
+src/__pycache__/
 
 # Sensitive information (example, adjust as needed)
 config.local.php
