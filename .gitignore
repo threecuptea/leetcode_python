@@ -1,0 +1,22 @@
+# Project-specific build outputs
+/build/
+/dist/
+*.log
+*.tmp
+
+# Dependency management
+/node_modules/
+/venv/
+/target/
+
+# IDE and OS specific files
+.DS_Store
+Thumbs.db
+.idea/
+.venv/
+.vscode/
+*.swp
+
+# Sensitive information (example, adjust as needed)
+config.local.php
+.env
