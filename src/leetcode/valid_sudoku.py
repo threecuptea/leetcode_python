@@ -1,6 +1,11 @@
 from typing import List
 from collections import defaultdict
-
+###############
+# Valid Sudoku
+# https://leetcode.com/problems/valid-sudoku/description/
+# Determine if a 9 x 9 Sudoku board is valid.
+# Each row, column or box must contain the digits 1-9 without repetition.
+# #############
 class Solution:
     # row_idx, col_idx, box_idx are all keyed by the Sudoku number.
     # Values are all row indexes, and column indexes for col_idx etc.
@@ -14,19 +19,15 @@ class Solution:
         for row in range(0, 9):
             for col in range(0, 9):
                 val = board[row][col]
-                if val.isdigit():
-                    box = get_box_num(row, col)
-                    # check if there is existing row index 0 for Sudoku number 3, ex.
-                    # Apply the same on col_idx and box_idx
-                    if row_idx.get(val) and row in row_idx.get(val):
-                        return False
-                    if col_idx.get(val) and col in col_idx.get(val):
-                        return False
-                    if box_idx.get(val) and box in box_idx.get(val):
-                        return False
-                    row_idx[val].add(row)
-                    col_idx[val].add(col)
-                    box_idx[val].add(box)
+                if not val.isdigit():
+                    continue
+                box = get_box_num(row, col)
+                # defaultdict will return empty set and no need to protect
+                if row in row_idx[val] or col in col_idx[val] or box in box_idx[val]:
+                    return False
+                row_idx[val].add(row)
+                col_idx[val].add(col)
+                box_idx[val].add(box)
         return True
 
 def main():

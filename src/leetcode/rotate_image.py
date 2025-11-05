@@ -1,6 +1,12 @@
 from typing import List
 # python -m leetcode.rotate_image
 class Solution:
+    ##########
+    # 48. Rotate Image
+    # https://leetcode.com/problems/rotate-image/description/
+    # You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+    # You have to rotate the image in-place,
+    ##############
     def rotate(self, matrix: List[List[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
@@ -43,6 +49,11 @@ def main():
     matrix = [[1,2,3],[4,5,6],[7,8,9]]
     print(f'Input= {matrix}')
     solution = Solution()
+    solution.rotate(matrix)
+    print(f'Output= {matrix}')
+
+    matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+    print(f'Input= {matrix}')
     solution.rotate(matrix)
     print(f'Output= {matrix}')
 
