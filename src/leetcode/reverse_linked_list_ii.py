@@ -8,6 +8,7 @@ class Solution:
     #####
     # 92. Reverse Linked List II
     # https://leetcode.com/problems/reverse-linked-list-ii/description/
+    # Inspired by https://www.youtube.com/watch?v=RF_M9tX4Eag
     #####
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         if not head.next:
