@@ -10,6 +10,8 @@ This is a repo that I showcase my capabity in Python Programming with Leetcode p
 * **Longest Consecutive Sequence, Two Sum, Group Anagrams and Ransom Notes**: various problem using Hashmap'
 * **3Sum and Container With Most Water**: problems using 'Two Pointers' algorithm
 * **Roman to Integer and Integer to Roman**: interesting problems using 'Array/ String'
+* **Linked List Cycle**: Use Floyd's Cycle-Finding Algorithm.  It is much faster than 'out of box' implementation.
+* **Add Two Numbers**: Use 'val' double duty to sum up carrier, l1.val and l2.val and also as the carrier for the next round. Make sure to record the last carrier even if both l1 and l2 are exhausted.
 * **LRU cache**: Design  a **[Least Recently Used (LRU) cache](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU)**.
   The implmentation 1 is using double linked list nodes backing LRU cache and add left and right dummy nodes to point to the least used node and the recently used node.  That is the common implmentation.
   The implementation 2 is using 'OrderedDict[int, int]' directly. OrderedDict's move_to_end(key) and popitem(last=False) functions fit well here. Also found an interesting bug: should we compare the cap and remove key first or should we insertfirst then compare with the cap and remove if necessary.

@@ -6,7 +6,7 @@ class ListNode:
 #####
 # 141. Linked List Cycle
 # https://leetcode.com/problems/linked-list-cycle/description/
-# Use Floyd's Cycle-Finding Algorithm.  It is much faster
+# Use Floyd's Cycle-Finding Algorithm.  It is much faster than 'out of box' implementation
 #####
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
