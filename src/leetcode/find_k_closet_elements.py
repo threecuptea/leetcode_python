@@ -1,3 +1,4 @@
+from typing import List
 class Solution:
     #####
     # 658. Find K Closest Elements
@@ -39,5 +40,4 @@ class Solution:
         if l > r:
             return self.fill_result(r, l, arr, result, k, x)
         # found the target
-        result.append(arr[mid])
         return self.fill_result(mid-1, mid+1, arr, result, k, x)

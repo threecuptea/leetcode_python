@@ -1,3 +1,4 @@
+from typing import List
 class Solution:
     #####
     # 41. First Missing Positive
