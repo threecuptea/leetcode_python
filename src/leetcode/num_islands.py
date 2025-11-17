@@ -2,7 +2,7 @@ from typing import List
 class Solution:
     ######
     # 200. Number of Islands
-    # https://leetcode.com/problems/number-of-islands/description/?
+    # https://leetcode.com/problems/number-of-islands/description/
     ######
     def numIslands(self, grid: List[List[str]]) -> int:
         m, n = len(grid), len(grid[0])
