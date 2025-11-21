@@ -18,7 +18,7 @@ class Solution:
             mid = l + (r -l) // 2
             result = min(result, nums[mid])  # in case mid happen to be the lowest point and got lost when move right or left
             # need to include equal since the the very beginning can be the answer
-            # In the left section
+            # In the left section, [4,5,6,7,0,1,2], [11, 13, 15, 17]
             if nums[mid] >= nums[l]:
                 l = mid + 1
             else:

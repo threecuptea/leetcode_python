@@ -10,6 +10,9 @@ class Solution:
         i, j = 0, 0
         maxcnt = 0
         cnt = 0
+        # Technically we did not go through all end points.  However, it does not matter.
+        # cnt can only decrement after we finish all start end
+
         while i < len(start) and j < len(end):
             if end[j] <= start[i]:
                 cnt -= 1

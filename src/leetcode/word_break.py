@@ -14,6 +14,9 @@ class Solution:
                 # enough characters
                 if i + len(w) <= n and s[i:i + len(w)] == w:
                     dp[i] = dp[i + len(w)]
+                # cars, ['car', 'ca' 'rs'], dp[0] can assigned to False if the word chosen is 'car'
+                # There can be multiple choices, car[s] ca[rs] but the former does not work
+                # because 's' is not in the dictionary.  Need to check if True before break
                 if dp[i]:
                     break
         return dp[0]

@@ -2,6 +2,10 @@
 # def get(self, index: int) -> int:
 
 class Solution:
+    ######
+    # 702. Search in a Sorted Array of Unknown Size
+    # https://leetcode.com/problems/search-in-a-sorted-array-of-unknown-size/
+    ######
     def search(self, reader, target):
         l, r = 0, 2
         # It turns out that returns 2**31 - 1 if the i is out of the boundary of the array is not a factor

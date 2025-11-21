@@ -14,7 +14,7 @@ class Solution:
         for curr in sorted_i[1:]:
             prev = result[-1]
             # check overlapping
-            if curr[0] >= prev[0] and curr[0] <= prev[1]:
+            if curr[0] <= prev[1]:
                 result.pop()
                 end = max(curr[1], prev[1])
                 result.append([prev[0], end])

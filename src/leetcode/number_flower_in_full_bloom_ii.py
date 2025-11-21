@@ -14,7 +14,8 @@ class Solution:
         people = [(p, i) for i, p in enumerate(people)]
         result = [0] * len(people)
         cnt = 0
-        # need to sort people; otherwise people will be all over the place and cannot share count
+        # need to sort people; otherwise people will be all over the place and cannot share count,
+        # start and end (need to make a copy)
         for p, i in sorted(people):
             while start and p >= start[0]:
                 heapq.heappop(start)

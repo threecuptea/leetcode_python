@@ -1,8 +1,9 @@
 from typing import List
 class Solution:
     ######
+    # 79. Word Search
     # https://leetcode.com/problems/word-search/description/
-    # https://leetcode.com/problems/word-break/description/
+    # a backtracking example
     ######
     def exist(self, board: List[List[str]], word: str) -> bool:
         m = len(board)
@@ -21,8 +22,10 @@ class Solution:
                 return False
             # supposed you look for
             # CABCEF
-            # PXABC
-            # Supposed you look for ABCEC, we won't find the real solution PX'ABC'EC if we don't backtrack 'E' in ABCE.
+            # PXAED
+            # XXXC
+            # not
+            # Supposed you look for ABCEC, we won't find the real solution PX'ABC'EC if we don't backtrack 'E' in ABCEF.
             # That's why we need that backtrack saving and revert
             char = board[i][j]
             board[i][j] = '#'
