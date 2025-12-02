@@ -9,8 +9,8 @@ class Solution:
         g = defaultdict(list)
         for a, b in prerequisites:
             g[a].append(b)
-        UNVISITED, VISITING, VISITED = 0, 1, 2
-        states = [UNVISITED] * numCourses
+        UNVISIT, VISITING, VISITED = 0, 1, 2
+        states = [UNVISIT] * numCourses
 
         def dfs(c):
             # cycled

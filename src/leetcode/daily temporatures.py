@@ -12,7 +12,7 @@ class Solution:
         stk = []
         # Inspired by Greg Hogg's https://www.youtube.com/watch?v=_ZEvmycwXHs
         # The monotonic stack records those elements haven't got the answer yet and they
-        # are in descending order (If it encounters something bigger, it has already pop out.
+        # are in descending order (If it encounters something greater, it has already pop out and compute.)
         # Compare the incoming with the last element, if the incoming element is bigger, pop and record the answer.
         # Since elements are in monotonic descending order, it can continuously process
         # efficiently until it encounter something bigger in the stack

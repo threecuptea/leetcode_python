@@ -19,7 +19,7 @@ class Solution:
         #    e  3  2  1  1
         #       3  2  1  0
         # The best route from the bottom up:
-        # 0 -> 1 (delete 'e') -> 1 (keep 's) -> 2 (delete 'r) -> 2 (keep 'o') -> 3 (replace 'h' with 'r')
+        # 0 -> 1 (delete 'e') -> 1 (keep 's') -> 2 (delete 'r) -> 2 (keep 'o') -> 3 (replace 'h' with 'r')
         # inspired by neetcode https://www.youtube.com/watch?v=XYi2-LPrwm4
         cache = [[float('inf') for _ in range(len(word2)+ 1)] for _ in range(len(word1)+ 1)]
         # populate row len(word1)

@@ -19,7 +19,7 @@ class Solution:
         dq = deque([root])
         while dq:
             level = []
-            for i in range(len(dq)):
+            for _ in range(len(dq)):
                 node = dq.popleft()
                 level.append(node.val)
                 if node.left:

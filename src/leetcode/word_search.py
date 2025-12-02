@@ -12,7 +12,7 @@ class Solution:
         # That's edge case that we cannot find any offset within the boundary.
         if m == 1 and n == 1:
             return board[0][0] == word
-
+        # Inspired by https://www.youtube.com/watch?v=Sn2DqF-S2h8
         def backtrack(pos, idx):
             i, j = pos
             if idx == w:
@@ -20,11 +20,11 @@ class Solution:
             # need if 0 <= r < m and 0 <= c < n to protect index out of range
             if board[i][j] != word[idx]:
                 return False
-            # supposed you look for
+            # supposed you have the followings:
             # CABCEF
             # PXAED
             # XXXC
-            # not
+            #
             # Supposed you look for ABCEC, we won't find the real solution PX'ABC'EC if we don't backtrack 'E' in ABCEF.
             # That's why we need that backtrack saving and revert
             char = board[i][j]

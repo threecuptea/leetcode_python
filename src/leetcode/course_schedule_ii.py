@@ -9,10 +9,10 @@ class Solution:
         # inspired by Greg Hogg's https://www.youtube.com/watch?v=2cpihwDznaw
         orders = []
         g = defaultdict(list)
-        UNVISITED, VISITING, VISITED = 0, 1, 2
+        UNVISIT, VISITING, VISITED = 0, 1, 2
         for a, b in prerequisites:
             g[a].append(b)
-        states = [UNVISITED] * numCourses
+        states = [UNVISIT] * numCourses
         def dfs(c):
             # cycled
             if states[c] == VISITING:

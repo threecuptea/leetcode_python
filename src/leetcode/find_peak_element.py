@@ -13,7 +13,7 @@ class Solution:
                 r = mid - 1
             elif mid < len(nums)-1 and nums[mid+1] > nums[mid]:
                 l = mid + 1
-            # This cover 3 cases: mid is not at two end and it is greater than its closest right and left neighbor
+            # This cover 3 cases: mid is not at two end,  and it is greater than its closest right and left neighbor
             # That is the most common one and the right end & its left neighbor is not greater than it
             # or the left end and its right neighbor is great than it
             else:

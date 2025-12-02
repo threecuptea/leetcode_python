@@ -11,10 +11,11 @@ class Solution:
         dp = [0] * n
         maximum = 0
         dp[0] = nums[0]
+        # [2,7,9,3,1]
         for i in range(1, n):
             dp[i] = maximum + nums[i] # dp[2] = 1
             # There is a delay effect because robber cannot rob adjacent house,
-            # add dp[0] so that dp[2] can use it
+            # add dp[0] before we process dp[2], dp[1] is not available for dp[2] yet
             maximum = max(maximum, dp[i - 1])
         # we did not calculate the maximum
         return max(maximum, dp[n - 1])
