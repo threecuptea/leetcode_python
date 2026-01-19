@@ -1,9 +1,13 @@
 # From HackRank
+# https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/zero-sum-triplets-within-sliding-window/problem
 def findZeroSumTripletsInWindow(readings, windowSize):
     # Write your code here
     n = len(readings)
     result = set()
     for i in range(n):
+        # Create window of windowSize then use threesum implementation in those windows.
+        # Since threesum need to be sorted, it won't maintain existing i, j, k order.  However,
+        # We can move l, r to shrink/ expand the sum since they are sorted.
         end = min(i + windowSize, n)
         window = readings[i:end]
         window.sort()
@@ -17,6 +21,9 @@ def findZeroSumTripletsInWindow(readings, windowSize):
             while l < r:
                 tot = window[a] + window[l] + window[r]
                 if tot == 0:
+                    # In order to de-duplicate, those 3 numbers need to be in sorted order
+                    # and set.  List is not hashable.  Therefore, we need to use tuple, then convert to []
+                    # in the result.  That's the trick
                     result.add((window[a], window[l], window[r]))
                     while l < r and window[l] == window[l + 1]:
                         l += 1

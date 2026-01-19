@@ -4,8 +4,8 @@ from collections import Counter
 #
 # The function is expected to return a STRING_ARRAY.
 # The function accepts INTEGER n as parameter.
+# https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/generate-valid-angle-bracket-sequences/problem
 #
-
 def generateAngleBracketSequences(n):
     # Write your code here
     # There are a couple of rules, number of '<' must be > number of >. For n == 3, you can only use exactly 3 '<' and 3 '>'

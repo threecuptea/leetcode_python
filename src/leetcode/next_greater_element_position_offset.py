@@ -1,4 +1,7 @@
 # https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/next-greater-element-with-offset/problem
+# This is the same as https://leetcode.com/problems/daily-temperatures/description/
+# Using monotonic stack is the most efficient way to solve this problem: one bigger number can resolve
+# for smaller numbers at multiple earlier indexes
 """
 Given an integer array readings, return an array result where result[i] = [value, distance], with value being the next greater element to the right of readings[i] and distance being the index difference. If no greater element exists, return [-1, -1].
 

@@ -3,6 +3,8 @@ class Solution:
     # https://leetcode.com/problems/combination-sum/
     # Inspired by Greg Hoggs's https://www.youtube.com/watch?v=utBw5FbYswk
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        # candidates = [2,3,6,7], target = 7, the answer is [2, 2, 3] or [7], Since we can use the same index
+        # multiple time.  The decision is to advance and not to choose or to choose that index
         res, sol = [], []
         nums = candidates
         n = len(nums)
@@ -12,7 +14,7 @@ class Solution:
                 return
             if cur_sum > target or idx == n:
                 return
-            # not to use the cur_idx
+            # not to use the cur_idx, no cost to include in curr_sum
             backtrack(idx+1, cur_sum)
 
             sol.append(nums[idx])

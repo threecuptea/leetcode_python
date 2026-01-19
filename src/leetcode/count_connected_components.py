@@ -1,19 +1,24 @@
 from collections import defaultdict
 # https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/count-connected-components-in-network
-# Use Union find.  It is less messy since its undirected graph
+# Leetcode has another implementation for complete connected components that has stricter rule: No. of edges are
+# n * (n -1) // 2
+# It is less messy to use Union Find since links are undirect (bi-direct)
 def countIsolatedCommunicationGroups(links, n):
     # Write your code here
     new_group_idx = 1
-    groups = defaultdict(list)
-    pc_group = {}
-    in_links = set()
+    # Keep groups and pc_groups in sync when one vertex take the other one's group index
+    groups = defaultdict(list)  # group index: all member belongs to that group
+    pc_group = {}  # Record the mapping: pc -> group idx
+    in_links = set()  # record all vertices in links (edges) so that we can count isolated PC
 
+    # they both join but belong to different groups, Take one or the other and migrate members
     def migrate(from_idx, to_idx):
         for mem in groups[from_idx]:
             pc_group[mem] = to_idx
         groups[to_idx].extend(groups[from_idx])
         del groups[from_idx]
 
+    # for the scenario that one of them join the group, the one not in a group will take the group idx of the one in a group
     def join_group(v, g_idx):
         pc_group[v] = g_idx
         groups[g_idx].append(v)
@@ -26,7 +31,7 @@ def countIsolatedCommunicationGroups(links, n):
             pc_group[v1], pc_group[v2] = new_group_idx, new_group_idx
             groups[new_group_idx].extend([v1, v2])
             new_group_idx += 1
-        # Only one of them join the group
+        # Only one of them join the group, the one not in a group will take the group idx of the one in a group
         elif v1 not in pc_group or v2 not in pc_group:
             if v1 in pc_group:
                 join_group(v2, pc_group[v1])

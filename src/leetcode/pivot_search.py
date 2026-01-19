@@ -1,5 +1,5 @@
 # https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/search-timestamp-in-rotated-log-timestamps/problem
-
+# It's the same as https://leetcode.com/problems/search-in-rotated-sorted-array/
 def searchRotatedTimestamps(nums, target):
     # Write your code here
     l, r = 0, len(nums)-1

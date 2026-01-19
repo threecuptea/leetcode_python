@@ -1,5 +1,5 @@
 # from HackRank
-# For your reference:
+# https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/remove-consecutive-duplicates-sorted-list/problem
 #
 class SinglyLinkedListNode:
     def __init__(self, data):

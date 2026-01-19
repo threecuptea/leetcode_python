@@ -5,6 +5,7 @@ def commonChild(s1, s2):
     # Write your code here
     m, n = len(s1), len(s2)
     dp = []
+    # How to initialize 2-dimension array
     for _ in range(m + 1):
         dp.append([0] * (n + 1))
 

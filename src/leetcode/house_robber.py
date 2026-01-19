@@ -15,6 +15,6 @@ class Solution:
         for i in range(2, n):
             # dp[1] has already taken max(dp[0], dp[1] into consideration. It chose not to take nums[1]
             dp[i] = max(dp[i - 2] + nums[i], dp[i - 1])
-
+        # dp[n] does not data and cannot follow the formular. Therefore, we need to return the max of dp[n-1] and dp[n-2
         return max(dp[n-1], dp[n-2])
 
