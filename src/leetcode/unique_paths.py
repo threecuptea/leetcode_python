@@ -1,4 +1,3 @@
-import math
 class Solution:
     #  https://leetcode.com/problems/unique-paths/
     def uniquePaths(self, m: int, n: int) -> int:

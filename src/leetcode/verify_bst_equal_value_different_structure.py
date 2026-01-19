@@ -5,7 +5,7 @@ def verifySameMultisetDifferentStructure(root1, root2):
     null_value = 100001
 
     def not_null(num):
-        num != null_value
+        return num != null_value
 
     same_multiset = \
         sorted(list(filter(not_null, root1))) == sorted(list(filter(not_null, root2)))
