@@ -22,7 +22,7 @@ class Solution:
             if i in min_times:
                 continue
             min_times[i] = time_to_i
-            # 1 -> 2 (1), 1 -> 4 (4), 2 -> 3 (1+1=2), 3 -> 4 (2+1=3), 1 -> 2 -> 3 -> 4 (3) 4 will be visited via this route
+            # 1 -> 2 (1), 1 -> 4 (4), 2 -> 3, 1 (1 -> 3:1+1=2), 3 -> 4, 1 (1->4:2+1=3), 1 -> 2 -> 3 -> 4 (3) 4 will be visited via this route
             # first.  when 4 (4) was popped out, it will be ignored because it was visited by previous route
             # 4 will be in the mean_times
             for nei, nei_time in g[i]:

@@ -12,22 +12,22 @@ class Solution:
     # I can check if there is existing row index 0 for Sudoku number 3, ex.
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         # The formula to get box number.
-        def get_box_num(r, c):
-            return (r // 3) * 3 + c // 3 # r
-
-        row_idx, col_idx, box_idx = defaultdict(set), defaultdict(set), defaultdict(set)
-        for row in range(0, 9):
-            for col in range(0, 9):
-                val = board[row][col]
-                if not val.isdigit():
+        def box(r, c):
+            return r // 3 * 3 + c // 3
+        # key is row num, col num and box num .  The same number can appear in the same row or col or box twice
+        row_dict, col_dict, box_dict = defaultdict(set), defaultdict(set), defaultdict(set)
+        for r in range(9):
+            for c in range(9):
+                val = board[r][c]
+                if val == '.':
                     continue
-                box = get_box_num(row, col)
-                # defaultdict will return empty set and no need to protect
-                if row in row_idx[val] or col in col_idx[val] or box in box_idx[val]:
+                # if that number has already appeared in the current row, col or box
+                b = box(r, c)
+                if val in row_dict[r] or val in col_dict[c] or val in box_dict[b]:
                     return False
-                row_idx[val].add(row)
-                col_idx[val].add(col)
-                box_idx[val].add(box)
+                row_dict[r].add(val)
+                col_dict[c].add(val)
+                box_dict[b].add(val)
         return True
 
 def main():

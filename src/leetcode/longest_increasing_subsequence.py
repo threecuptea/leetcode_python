@@ -12,6 +12,8 @@ class Solution:
         # idx.         0,  1,  2
         #              1,  3,   6,   9,   4,  10, 5, 6
         # count        1.  2.   3.   4,   3,   5
+        # # This won't work.  The closest in distance for 2 in [0,1,0,3,2,3] is 0
+        # which is not closest to its value: 1.  This will have wrong dp[1, 2, 1, 2, 2, 3]
         for i in range(1, n):
             # num[i] compares with any index before 1
             for j in range(i):

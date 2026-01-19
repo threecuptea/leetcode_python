@@ -10,9 +10,7 @@ class Solution:
             if char in '([{':
                 stack.append(char)
             else:
-                if not stack:
-                    return False
-                if stack[-1] != opening_paren[char]:
+                if not stack or stack[-1] != opening_paren[char]:
                     return False
                 stack.pop()
         if stack:

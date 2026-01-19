@@ -12,22 +12,25 @@ class Solution:
         UNVISIT, VISITING, VISITED = 0, 1, 2
         for a, b in prerequisites:
             g[a].append(b)
-        states = [UNVISIT] * numCourses
+        state = [UNVISIT] * numCourses
         def dfs(c):
             # cycled
-            if states[c] == VISITING:
+            if state[c] == VISITING:
                 return False
-            elif states[c] == VISITED:
+            if state[c] == VISITED:
                 return True
-            states[c] = VISITING
-            for p in g[c]:
-                if not dfs(p):
+            state[c] = VISITING
+            for pre in g[c]:
+                if not dfs(pre):
                     return False
-            states[c] = VISITED
+
+            state[c] = VISITED
             orders.append(c)
             return True
 
         for i in range(numCourses):
+            if state[i] == VISITED:
+                continue
             if not dfs(i):
                 return []
         return orders

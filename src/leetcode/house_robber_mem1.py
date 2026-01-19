@@ -9,6 +9,9 @@ class Solution:
         if n == 1:
             return nums[0]
         maximum = 0
+        # 2, 1, 1, 2
+        # 2, 7, 9, 3, 1
+        # 1, 2, 3, 1
         prev, curr = nums[0], 0
         for i in range(1, n):
             curr = maximum + nums[i]

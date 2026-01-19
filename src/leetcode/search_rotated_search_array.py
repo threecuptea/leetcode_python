@@ -13,14 +13,15 @@ class Solution:
             # 4, 5, 6, 7, 0, 1, 2
             # the left part of the search tree then narrow down to the right side when either of multiple conditions met
             # using the Take mid as the position of 6 as an example.  It includes two part
-            # target > mid value or target < l value
+            # target > mid value or target < l value. the right side using l pointer to compare, no need to include =
             if nums[l] <= nums[mid]:
                 if target > nums[mid] or target < nums[l]:
                     l = mid + 1
                 else:
                     r = mid - 1
             # the right part of the search tree then narrow down to the left when either of multiple conditions met
-            # using 1 as mid as an example: either target < mid value or target > r val
+            # # 6 7 8 0 1 2 3 4 5, mid = 1
+            # either target < mid value or target > r val, left side using r pointer to compare, no need to include =
             else:
                 if target < nums[mid] or target > nums[r]:
                     r = mid - 1

@@ -16,7 +16,7 @@ class Solution:
             while dq:
                 i, j = dq.popleft()
                 visited.add((i, j))
-                for r_off, c_off in [[0, 1], [1, 0], [-1, 0], [0, -1]]:
+                for r_off, c_off in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
                     r, c = i + r_off, j + c_off
                     if 0 <= r < m and 0 <= c < n and grid[r][c] == '1' and (r, c) not in visited:
                         dq.append((r, c))
@@ -28,6 +28,7 @@ class Solution:
                     dq.clear()
                     dq.append((r, c))
                     bfs()
+
 
         return islands
     # Time: (m * n)

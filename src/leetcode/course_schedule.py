@@ -10,23 +10,24 @@ class Solution:
         for a, b in prerequisites:
             g[a].append(b)
         UNVISIT, VISITING, VISITED = 0, 1, 2
-        states = [UNVISIT] * numCourses
-
+        state = [UNVISIT] * numCourses
         def dfs(c):
             # cycled
-            if states[c] == VISITING:
+            if state[c] == VISITING:
                 return False
-            elif states[c] == VISITED:
+            elif state[c] == VISITED:
                 return True
 
-            states[c] = VISITING
+            state[c] = VISITING
             for p in g[c]:
                 if not dfs(p):
                     return False
-            states[c] = VISITED
+            state[c] = VISITED
             return True
         # Cannot finish if cycled
         for i in range(numCourses):
+            if state[i] == VISITED:
+                continue
             if not dfs(i):
                 return False
         return True
