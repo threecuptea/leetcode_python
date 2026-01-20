@@ -8,6 +8,7 @@ from collections import Counter
 #
 def generateAngleBracketSequences(n):
     # Write your code here
+    # Find what angle brackets are available given the prior bracket sequence
     # There are a couple of rules, number of '<' must be > number of >. For n == 3, you can only use exactly 3 '<' and 3 '>'
     # ab_cnt_dict = {'<': 0, '>': 0}
     ans, sol = [], []

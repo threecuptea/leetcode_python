@@ -21,9 +21,9 @@ def findZeroSumTripletsInWindow(readings, windowSize):
             while l < r:
                 tot = window[a] + window[l] + window[r]
                 if tot == 0:
-                    # In order to de-duplicate, those 3 numbers need to be in sorted order
-                    # and set.  List is not hashable.  Therefore, we need to use tuple, then convert to []
-                    # in the result.  That's the trick
+                    # Windows are sorted. Any triplets generated from a window are sorted. Append triplets to 'set' to
+                    # de-deduplicate.  However, list is not hashable and cannot be used as a key. We need to implement triplets
+                    # using tuple, then convert to [] in the result.  That's the trick
                     result.add((window[a], window[l], window[r]))
                     while l < r and window[l] == window[l + 1]:
                         l += 1

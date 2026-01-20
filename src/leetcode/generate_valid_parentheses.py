@@ -4,7 +4,6 @@ class Solution:
     # https://leetcode.com/problems/generate-parentheses/
     def generateParenthesis(self, n: int) -> List[str]:
         ans, sol = [], []
-        # Find what angle brackets are available given the prior bracket sequence
         def what_avail_now():
             # Calculate Counter time, otherwise that need to be in sync when push or pop
             counter = Counter(sol)

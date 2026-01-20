@@ -45,6 +45,7 @@ def countIsolatedCommunicationGroups(links, n):
             else:
                 migrate(g_idx1, g_idx2)
         # no need to do anything if they are in the same groups
+    # Don't forget to include isolated components which have no link to any other one.
     cnt_isolated_vertex = 0
     for i in range(n):
         if i not in in_links:

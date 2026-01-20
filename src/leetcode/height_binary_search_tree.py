@@ -1,5 +1,5 @@
 import sys
-# # https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/compute-height-of-bst/problem
+# https://www.hackerrank.com/contests/software-engineer-prep-kit/challenges/compute-height-of-bst/problem
 ######
 # n = 7
 # values = [4, 2, 6, 1, 3, 5, 7]
@@ -7,7 +7,7 @@ import sys
 # rightChild = [2, 4, 6, -1, -1, -1, -1]
 # 4 is the root and index=0 and the left and right child of 4 is at index=0 of the leftChild and the rightChild
 # the left child of 4 has index = 1 which is 2, 2's left child is at index = 1 and right index at 2
-# 1, 3, 5, 7 all have leftChild and ritghChild -1, -1.  Ther are leaves with height ( 1 + max(0, 0)).  Build the height from the bottom up
+# 1, 3, 5, 7 all have leftChild and rightChild -1, -1.  They are leaves with height ( 1 + max(0, 0)).  Build the height from the bottom up
 #####
 def getBinarySearchTreeHeight(values, leftChild, rightChild):
     # Write your code here
