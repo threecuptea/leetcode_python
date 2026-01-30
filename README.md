@@ -1,6 +1,6 @@
 # leetcode_python
 
-This is a repo that I showcase my capabity in Python Programming with Leetcode problems (also serves as self-studying guide with my notes). It covers all major DSA patterns.  The followings are highlights:
+This is a repo that I showcase my capabity in Python Programming with Leetcode/ HackerRank problem(also serves as self-studying guide with my notes). It covers all major DSA patterns.  The followings are highlights:
 
 * [Number of Islands](https://leetcode.com/problems/number-of-islands/): a problem using 'Graph General' algorithm of DSF (Depth First Search) or BSF (Breath First Search). I have solutions for both. The key point is that it clears the surrounding neighers either by by setting the cell to '0' (DSF) or by adding its position turple to visited set (BFS) every time it increment number of islands.  It's like clustering.  Therefore, we won't over-count.
   The differences: DFS recursively call layer by layer and BFS make use of queue, pop and process elements while push its neighbors into queue along the way so that all elements of one layer would be processed before ones of the next layer.
