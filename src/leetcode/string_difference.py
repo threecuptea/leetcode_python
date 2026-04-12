@@ -1,4 +1,4 @@
-# HackRank
+# https://www.hackerrank.com/contests/mock-interviews-software-engineer-coding/challenges/string-difference-1-4/problem
 def getRemovableIndices(str1, str2):
     # Write your code here
     n = len(str2)

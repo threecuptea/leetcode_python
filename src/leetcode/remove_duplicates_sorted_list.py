@@ -3,19 +3,20 @@ class SinglyLinkedListNode:
     def __init__(self, data):
         self.data = data
         self.next = None
+# This is a better version and no need to have dummy or prev. However, be cautious of consecutive the same number
 def deleteDuplicates(head):
     if not head:
         return None
     # Write your code here
-    dummy = SinglyLinkedListNode(-999999)
-    dummy.next = head
-    prev, curr = dummy, head
-    # It needs curr not curr.next so that it will compare the last node (it might have duplicate value)
-    while curr:
-        if curr.data == prev.data:
-            nxt = curr.next
-            prev.next, curr = nxt, nxt
+    curr = head
+    while curr.next:
+        nxt = curr.next
+        if nxt.data == curr.data:
+            # curr need to remain in the case so that it can compare the nxt.next. There can be consecutive the same number
+            # 1,2,2,2,3,4,4,5
+            curr.next = nxt.next
+        # move on only when curr and next is different
         else:
-            prev, curr = curr, curr.next
+            curr = curr.next
 
-    return dummy.next
+    return head

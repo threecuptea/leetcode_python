@@ -16,7 +16,7 @@ class Solution:
         while intervals:
             (s, e), t = intervals.pop(), todo.pop()
             # we start from the last interval which has more chance to overlap with
-            # with the previous one by choosing from the start
+            # the previous one by choosing from the start
 
             if t == 0:
                 continue
