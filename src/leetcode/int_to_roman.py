@@ -32,15 +32,15 @@ def main():
     num = 3749
     solution = Solution()
     output = solution.intToRoman(num)
-    print(f'Output= {output}')
+    print(f'Input= {num}, Output= {output}')
 
     num = 58
     output = solution.intToRoman(num)
-    print(f'Output= {output}')
+    print(f'Input= {num}, Output= {output}')
 
     num = 1994
     output = solution.intToRoman(num)
-    print(f'Output= {output}')
+    print(f'Input= {num}, Output= {output}')
 
 if __name__ == "__main__":
     main()
