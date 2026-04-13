@@ -7,6 +7,7 @@ def canPlaceSecurityCameras(N, grid):
     num_cols = len(grid[0])
     # Write your code here
     def backtrack(row_idx, cameras_placed):
+        # Able to place cameras in all rows
         if row_idx == num_rows:
             return True
         # # no two share the same row, column, or "diagonal".
@@ -23,9 +24,10 @@ def canPlaceSecurityCameras(N, grid):
             return False
         for col in cols_avail:
             cameras_placed.append([row_idx, col])
-            # This path does not work
+            # The path work all the way
             if backtrack(row_idx + 1, cameras_placed):
                 return True
+            # This path does not work
             cameras_placed.pop()
 
     if backtrack(row_idx = 0, cameras_placed=[]):
