@@ -1,4 +1,5 @@
 # https://neetcode.io/problems/evaluate-reverse-polish-notation
+from typing import List
 class Solution:
     '''
     ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
