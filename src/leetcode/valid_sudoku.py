@@ -15,7 +15,7 @@ class Solution:
         def box(r, c):
             return r // 3 * 3 + c // 3
         # key is row num, col num and box num .  The same number can appear in the same row or col or box twice
-        row_dict, col_dict, box_dict = defaultdict(set), defaultdict(set), defaultdict(set)
+        rows, cols, boxes = defaultdict(set), defaultdict(set), defaultdict(set)
         for r in range(9):
             for c in range(9):
                 val = board[r][c]
@@ -23,11 +23,11 @@ class Solution:
                     continue
                 # if that number has already appeared in the current row, col or box
                 b = box(r, c)
-                if val in row_dict[r] or val in col_dict[c] or val in box_dict[b]:
+                if val in rows[r] or val in cols[c] or val in boxes[b]:
                     return False
-                row_dict[r].add(val)
-                col_dict[c].add(val)
-                box_dict[b].add(val)
+                rows[r].add(val)
+                cols[c].add(val)
+                boxes[b].add(val)
         return True
 
 def main():

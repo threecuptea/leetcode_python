@@ -3,6 +3,7 @@ class Solution:
     ######
     # 128. Longest Consecutive Sequence
     # https://leetcode.com/problems/longest-consecutive-sequence/
+    # https://neetcode.io/problems/longest-consecutive-sequence/question
     ######
     def longestConsecutive(self, nums: List[int]) -> int:
         st = set(nums)
@@ -11,8 +12,7 @@ class Solution:
             # Find the starting point val
             if val-1 in st:
                 continue
-            cnt = 1
-            curr = val
+            cnt , curr = 1, val
             while (curr+1) in st:
                 curr, cnt = curr+1, cnt + 1
             longest = max(longest, cnt)

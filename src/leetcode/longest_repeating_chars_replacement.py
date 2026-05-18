@@ -1,5 +1,5 @@
 # https://neetcode.io/problems/longest-repeating-substring-with-replacement/question
-
+# https://www.youtube.com/watch?v=tkNWKvxI3mU
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         max_len = 0

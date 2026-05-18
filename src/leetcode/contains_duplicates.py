@@ -1,5 +1,5 @@
 from collections import Counter
-
+from typing import List
 class Solution:
     ####
     # 217. Contains Duplicate

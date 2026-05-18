@@ -1,7 +1,8 @@
 # https://neetcode.io/problems/evaluate-reverse-polish-notation
+# https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
 from typing import List
 class Solution:
-    '''
+    """
     ["10","6","9","3","+","-11","*","/","*","17","+","5","+"]
     Output: 22
     Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
@@ -11,7 +12,7 @@ class Solution:
     = (0 + 17) + 5
     = 17 + 5
     = 22
-    '''
+    """
     # It doe pick up the last two for the operation
     def evalRPN(self, tokens: List[str]) -> int:
         operators = ['+', '-', '*', '/']

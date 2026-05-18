@@ -1,4 +1,3 @@
-from collections import Counter
 from typing import List
 class Solution:
     #####
@@ -6,24 +5,18 @@ class Solution:
     # https://leetcode.com/problems/contains-duplicate-ii/description/
     #####
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
-        counter = Counter(nums)
-        keys = {k for k, v in counter.items() if v > 1}
-        if len(keys) == 0:
+        if k == 0:
             return False
-        # This tries to get around huge size of list w/o duplicates
-        # It's a shortcut to only check keys of duplicates
-        for key in keys:
-            starting = 0
-            while starting < len(nums)-1:
-                try:
-                    idx = nums.index(key, starting)
-                except ValueError:
-                    break
-                try:
-                    nums.index(key, idx+1, idx+k+1)
+        val_idx = {}
+        for i, num in enumerate(nums):
+            if num not in val_idx:
+                val_idx[num] = i
+            else:
+                if i - val_idx[num] <= k:
                     return True
-                except ValueError:
-                    starting = idx + 1
+                else:
+                    val_idx[num] = i
+
         return False
 
 def main():

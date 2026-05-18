@@ -8,14 +8,7 @@ class Solution:
         # Counter is very handy here
         c_ran = Counter(ransomNote)
         c_mag = Counter(magazine)
-        # if keys(words) of the counter of ransom is not subset of keys(words) of magazine
-        if not c_ran.keys() <= c_mag.keys():
-            return False
-        for k, v in c_ran.items():
-            # Need more than maazine can provide
-            if v > c_mag[k]:
-                return False
-        return True
+        return all(k in c_mag and c_mag[k] >= c for k, c in c_ran.items())
 
 def main():
     ransom_note, magazine = "a", "b"
