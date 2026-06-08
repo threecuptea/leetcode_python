@@ -23,7 +23,7 @@ class Solution:
             # if mid = 7, we would get the left [0, 1, 2] section. The leftest is the correct choice. If the mid = 0,
             # We will get the right section. The leftest is not the right choice.  However, we did include the 'mid'
             # in the result.  This approach is fastest.  However, it's a little catch-all approach.
-            # In the case of [11, 13, 15, 17], the first statement nums[l] < nums[r] will take caare of it
+            # In the case of [11, 13, 15, 17], the first statement nums[l] < nums[r] will take care of it
             if nums[mid] >= nums[l]:
                 l = mid + 1
             else:

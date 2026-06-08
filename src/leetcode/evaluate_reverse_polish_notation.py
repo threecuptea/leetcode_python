@@ -38,7 +38,7 @@ class Solution:
                         # Only apply for the above scenario. DO NOT apply for -6 // 2
                         if result < 0 and (first % second) != 0:
                             result += 1
-
+                # ["2","1","+","3","*"], we always need to push the result back to operands; otherwise it will trigger ValueError
                 operands.append(result)
             else:
                 try:
@@ -46,5 +46,5 @@ class Solution:
                 except:
                     raise ValueError('The operand need to be integer in these mathematical operations')
                 operands.append(num)
-        # In a normal operation, operands should be empty. The second scenario only happen if tokens has one token (num)
+        # operands should always have at 1 element ["18"], we always push the result back to operands
         return result if not operands else operands[-1]

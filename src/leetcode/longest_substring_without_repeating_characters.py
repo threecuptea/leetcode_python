@@ -4,22 +4,18 @@ class Solution:
     # https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
     ####
     def lengthOfLongestSubstring(self, s: str) -> int:
-        sett = set()
-        longest = 0
-        l = 0
-        # r in range deals with window expanding
-        for r in range(len(s)):
-            # It's a sliding window issue. shrink the window by move l right if it is invalid set,
-            # expand the window if it is valid set by moving r right
-            # It is inspired by Greg Hogg's YouTube video https://www.youtube.com/watch?v=FCbOzdHKW18
+        n = len(s)
+        if n < 2:
+            return n
+        sett = set(s[0])
+        l, max_len = 0, 1
+        for r in range(1, n):
             while s[r] in sett:
                 sett.remove(s[l])
                 l += 1
-            w = r - l + 1
-            longest = max(longest, w)
             sett.add(s[r])
-
-        return longest
+            max_len = max(max_len, r - l + 1)
+        return max_len
 
 def main():
     s = "abcabcbb"

@@ -15,7 +15,7 @@ def maximumSum(a, m):
     if maximum == m -1:
         return maximum
     for (m1, idx1), (m2, idx2) in zip(prefix_sum[:-1], prefix_sum[1:]):
-        # This might be a tricky way to find teh maximum
+        # This might be a tricky way to find the maximum
         # Those stars are candidate pair, (1,4) - (3,0), [0:5](3 3 9 9 5) - [0:1] (3) = 3 9 9 5 its module (1-3 + 7) = 5
         if m1 < m2 and idx1 > idx2:
             maximum = max(maximum, m1 - m2 + m)

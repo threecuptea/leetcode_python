@@ -5,6 +5,7 @@ class Solution:
     # https://leetcode.com/problems/meeting-rooms-ii/description/
     ######
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        # why I cannot use list(set()) wrapper make them unique. [(0,40),(5,10),(15,20)] does not have duplicate start or end
         start = sorted([x[0] for x in intervals])
         end = sorted([x[1] for x in intervals])
         i, j = 0, 0

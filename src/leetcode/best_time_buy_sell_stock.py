@@ -11,8 +11,6 @@ class Solution:
         for p in prices:
             if p < min_price:
                 min_price = p
-            else:
-                profit = p - min_price
-                if profit > 0:
-                    max_profit = max(max_profit, profit)
+            elif p > min_price:
+                max_profit = max(max_profit, pr - min_price)
         return max_profit

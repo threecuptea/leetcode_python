@@ -2,16 +2,14 @@
 from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        l, r = 0, len(nums)-1
-        # we only have one number, 10, the target = 10, l = r = 0,
-        # it won't even execute while loop if l < r.
-        # It's different from threesum case where l, r represents unique index of array to sum up
+        l, r = 0, len(nums) - 1
         while l <= r:
-            m = l + ((r -l) // 2)
-            if nums[m] == target:
-                return m
-            if target < nums[m]:
-                r = m - 1
+            mid = (l + r) // 2
+            if nums[mid] == target:
+                return mid
+            if target < nums[mid]:
+                r = mid - 1
             else:
-                l = m + 1
+                l = mid + 1
+
         return -1
