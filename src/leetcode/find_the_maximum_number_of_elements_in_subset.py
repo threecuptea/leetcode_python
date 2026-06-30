@@ -6,6 +6,11 @@ class Solution:
     def maximumLength(self, nums: List[int]) -> int:
         # 2**4 = 65536, 2**5 = 4294967296 > 10**9, in another word, other than 1,
         # the max length of array [2, 4, 16, 256, 65536, 256, 16, 4, 2] == 9, p ==4
+        # [4, 16, 256, 65536, 256, 16, 4]
+        # [14, 196, 38416, 196, 14]
+        # [178, 31684, 178]
+        # [31623]
+        # d = {9: 4, 7: 14, 5: 178, 3:31623, 1: 10**9} # sqrt(10**9) upper bound, sqrt(31622) upper bound, 178, 14
         cnt = Counter(nums)
         one_cnt = cnt[1]
         ans = 0
