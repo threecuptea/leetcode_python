@@ -35,6 +35,8 @@ class FizzBuzz:
             if self.done:
                 break
             printFizzBuzz()
+            # It has to rely upon itself to release when i from 1 to 2. Fuzz, Buzz would not do because it's not their turn
+            # either it release itself or Fuzz, Buzz release for it.
             self.sem_n.release()
 
     # printNumber(x) outputs "x", where x is an integer.
